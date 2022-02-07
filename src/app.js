@@ -6,10 +6,14 @@
  */
 const express = require('express');
 
+const connection = require('./config/dbConnection');
+
 const app = express();
 
 app.use(express.urlencoded( { extended:true } ) );
 app.use(express.json());
+
+app.set('connection', connection);
 
 
 module.exports = app;
